@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //Tipeado de texto 
         const mensaje = document.getElementById('titulo');
-        const texto = 'EDUCACIÓN DE CALIDAD';
+        const texto = 'EDUCACIÓN PRIMARIA';
         let indice = 0;
         function typeWriter() {
             if (indice < texto.length) {
