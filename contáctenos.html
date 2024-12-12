@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/contáctenos.css" />
+    <link href="img/Global_education.png" rel="icon">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script> 
+    <title>Contáctenos</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">
+        <img src="img/Global_education.png"class="logo" alt="logo" >
+        </a>
+        <ul>
+          <li><a href="/">Nosotros</a></li>
+          <li><a href="/explora">Exploramos</a></li>
+          <li><a href="/producto">Productos</a></li>
+          <button class="boo"><a href="/contacto">Contáctenos</a></button>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <span class="big-circle"></span>
+      <img src="img/shape.png" class="square" alt="" />
+      <div class="form">
+        <div class="contact-info">
+          <h3 class="title">CONTACTO</h3>
+          <p class="text">
+            Estamos aquí para ayudarte. Por favor, llena el formulario para ponerte en contacto con nosotros.
+          </p>
+          <div class="info">
+            <div class="information">
+              <img src="img/ubicacion.png" class="icon" alt="" />
+              <p>San Vicente - Cañete</p>
+            </div>
+            <div class="information">
+              <img src="img/sobres.png" class="icon" alt="" />
+              <p>@Chocology</p>
+            </div>
+            <div class="information">
+              <img src="img/sobres.png" class="icon" alt="" />
+              <p>123-456-789</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <span class="circle one"></span>
+          <span class="circle two"></span>
+          <form id="contact-form" action="/registro" method="POST" autocomplete="on">
+            <h3 class="title">Registre sus Datos</h3>
+            <div class="input-container">
+              <input type="text" name="nombre" class="input" required />
+              <label for="name">Nombre</label>
+              <span>Nombre</span>
+            </div>
+            <div class="input-container">
+              <input type="email" name="correo" class="input" required />
+              <label for="email">Correo</label>
+              <span>Correo</span>
+            </div>
+            <div class="input-container">
+              <input type="tel" name="telefono" class="input" required />
+              <label for="phone">Teléfono</label>
+              <span>Teléfono</span>
+            </div>
+            <div class="input-container textarea">
+              <textarea name="mensaje" class="input" required></textarea>
+              <label for="message">Mensaje</label>
+              <span>Mensaje</span>
+            </div>
+            <input type="submit" value="Enviar" class="btn" />
+          </form>
+          <div id="confirmation-message" style="display:none; text-align:center ; font-size: 1rem; font-weight: 500;">
+            ¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.querySelector('form').addEventListener('submit', function (event) {
+  event.preventDefault(); // Evitar el envío por defecto
+
+  // Captura de campos
+  const name = document.querySelector('input[name="name"]');
+  const email = document.querySelector('input[name="email"]');
+  const phone = document.querySelector('input[name="phone"]');
+  const message = document.querySelector('textarea[name="message"]');
+  let valid = true;
+
+  // Limpiar errores previos
+  document.querySelectorAll('.error').forEach((el) => el.remove());
+
+  // Validación del nombre
+  if (name.value.trim() === '' || /\d/.test(name.value)) {
+    showError(name, 'El nombre no puede estar vacío ni contener números');
+    valid = false;
+  }
+
+  // Validación del correo
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email.value)) {
+    showError(email, 'Por favor ingresa un correo válido');
+    valid = false;
+  }
+
+  // Validación del teléfono
+  const phoneRegex = /^\d{9,}$/;
+  if (!phoneRegex.test(phone.value)) {
+    showError(phone, 'El teléfono debe tener al menos 9 dígitos y solo contener números');
+    valid = false;
+  }
+
+  // Validación del mensaje
+  if (message.value.trim() === '') {
+    showError(message, 'El mensaje no puede estar vacío');
+    valid = false;
+  }
+
+  // Si todo es válido, se muestra el mensaje de confirmación
+  if (valid) {
+    document.getElementById('confirmation-message').style.display = 'block';
+    this.reset(); // Resetear el formulario
+  }
+});
+
+// Función para mostrar errores
+function showError(element, message) {
+  const error = document.createElement('div');
+  error.className = 'error';
+  error.style.color = 'red';
+  error.style.fontSize = '0.8rem';
+  error.textContent = message;
+  element.parentElement.appendChild(error);
+}
+
+    </script>
+    <script src="js/contacto.js"></script>
+    <script src="../index.js"></script>
+    <iframe  class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31209.239108309648!2d-77.096061184375!3d-12.101546999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c9b17160f77d%3A0x1e6f45b16c05e72b!2sOrganizaci%C3%B3n%20de%20las%20Naciones%20Unidas!5e0!3m2!1ses-419!2spe!4v1727560896266!5m2!1ses-419!2spe"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </body>
+  <footer>
+    <div class="footer"> </div>
+    <h1 class="siguenos">¡ Síguenos en nuestras Redes !</h1>
+    <div class="footer-social">
+            <i class="fa-brands fa-facebook"><a href="https://www.facebook.com/globalgoalsUN/"></a></i>
+            <i class="fa-brands fa-twitter"><a href="https://x.com/globalgoalsun"></a></i>
+        </div>
+    <hr class="line">
+        <p class="copyright">© 2024 Valle Grande</p>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/producto.css">
+    <title>Feria</title>
+</head>
+<body>
+    <header class="header">
+        <img src="img/chocology.jpeg" alt="Logo" class="logo">
+        <nav class="nav">
+            <ul>
+                <li><a href="/">NOSOTROS</a></li>
+                <li><a href="/explora">EXPLORA</a></li>
+                <li><a href="/producto">PRODUCTOS</a></li>
+                <li> <a href="/contacto">CONTÁCTENOS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Nuestros productos</h1>
+    </section>    
+
+    <section class="section-chocology">
+        <h2 class="chocology-title">CHOCOLOGY</h2>
+        <div class="chocology-content">
+            <div class="chocology-text">
+                <p>
+                    Es una chocolatería que trabaja de manera online especializada en la venta de productos artesanales como chocotejas personalizadas, chocolates para personas diabéticas, chocofresas y más. Nuestro enfoque está en ofrecer productos de alta calidad y personalizados, con opciones inclusivas para personas diabéticas.
+                </p>
+            </div>
+            <div class="chocology-logo">
+                <img src="img/chocology.jpeg" alt="Chocology Logo">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- OBJETIVOS Section -->
+    <div class="container">
+        <div class="card short-term">
+            <h2>Objetivos a Corto Plazo:</h2>
+            <ul>
+                <li>⟶ Incrementar la visibilidad de la marca.</li>
+                <li>⟶ Incrementar las ventas iniciales.</li>
+                <li>⟶ Crear un sistema de seguimientos de los pedidos.</li>
+                <li>⟶ Crear fotografías profesionales de productos.</li>
+            </ul>
+        </div>
+    
+        <div class="card medium-term">
+            <h2>Objetivos a Medio Plazo:</h2>
+            <ul>
+                <li>⟶ Envíos nacionales y alianzas en línea.</li>
+                <li>⟶ Chocolates veganos, sin gluten e innovadores.</li>
+                <li>⟶ Línea de productos de temporada o edición limitada.</li>
+            </ul>
+        </div>
+    
+        <div class="card long-term">
+            <h2>Objetivos a Largo Plazo:</h2>
+            <ul>
+                <li>⟶ Ser una marca de chocolatería artesanal reconocida a nivel local e internacional.</li>
+                <li>⟶ Usar empaques 100% biodegradables o reciclables.</li>
+                <li>⟶ Participar en ferias internacionales y eventos gastronómicos para posicionarse como una opción premium.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="js/movi.js"></script>
+
+    
+    <!--ACORDEON-->
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h3>Expansión del portfolio de productos</h3>
+                <span class="arrow">&#9660;</span> <!-- Flecha hacia abajo -->
+            </div>
+            <div class="accordion-content">
+                <p>Además de las chocotejas, chocofresas y productos personalizados, planeamos desarrollar nuevas líneas de productos que sigan las tendencias de alimentación saludable.</p>
+                <ul>
+                    <li>⟶ Chocotejas sin azúcares añadidos para personas diabéticas.</li>
+                    <li>⟶ Opciones sin gluten para personas con intolerancias alimentarias.</li>
+                    <li>⟶ Ediciones especiales para fechas festivas (Navidad, San Valentín, Día de la Madre, cumpleaños, etc.).</li>
+                </ul>
+                <p><a href="#" onclick="showImage('img1')">Ver imagen</a></p>
+                <img id="img1" src="img/saludable.jpg" alt="Imagen 1" style="display:none;">
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h3>Expansión geológica</h3>
+                <span class="arrow">&#9660;</span> <!-- Flecha hacia abajo -->
+            </div>
+            <div class="accordion-content">
+                <p>En un plazo de 2 a 3 años, “Chocology” tendrá la capacidad logística y operativa para:</p>
+                <ul>
+                    <li>⟶ Ofrecer envíos a nivel nacional, con una red de distribución más amplia.</li>
+                    <li>⟶ Crear alianzas estratégicas con distribuidores internacionales para entrar en países de América Latina con una demanda creciente de productos artesanales.</li>
+                </ul>
+                <p><a href="#" onclick="showImage('img2')">Ver imagen</a></p>
+                <img id="img2" src="img/exporta.jpeg" alt="Imagen 2" style="display:none;">
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h3>Innovación tecnológica y experiencia del cliente</h3>
+                <span class="arrow">&#9660;</span> <!-- Flecha hacia abajo -->
+            </div>
+            <div class="accordion-content">
+                <ul>
+                    <li>⟶ Implementar una plataforma de suscripción mensual para recibir productos exclusivos y ediciones limitadas de chocotejas.</li>
+                    <li>⟶ Ofrecer un servicio de personalización online, donde el cliente pueda personalizar sus chocotejas a medida (ingredientes, empaques, mensajes personalizados).</li>
+                </ul>
+                <p><a href="#" onclick="showImage('img3')">Ver imagen</a></p>
+                <img id="img3" src="img/imagen3.jpg" alt="Imagen 3" style="display:none;">
+            </div>
+        </div>
+    </div>
+    <script src="js/arcodeon.js"></script>
+<!-- MISION, VISION Y VALORES -->
+<section id="m-v-i">
+    <div class="m-v-i">
+        <figure class="mision">
+            <h4>Misión</h4>
+            <p>Ofrecer productos artesanales de chocolate de alta calidad que brindan experiencias únicas a nuestros clientes, con un enfoque inclusivo y personalizado.</p>
+        </figure>
+        <figure class="mision">
+            <h4>Visión</h4>
+            <p>Ser la primera opción en chocolatería artesanal online en el mercado local, con planes de expansión internacional.</p>
+        </figure>
+        <figure class="mision">
+            <h4>Valores</h4>
+            <p>Innovación, calidad, inclusividad, y atención al detalle.</p>
+        </figure>
+    </div>
+</section>
+
+
+    <!-- Nueva sección Galería de la Empresa -->
+    <section id="galeria">
+        <div class="gallery" id="portafolio">
+            <h2 class="galeria-title">Galería de la Empresa</h2>
+            <div class="contenedor">
+                <div class="contenedor-galeria">
+                    <div class="img-container">
+                        <img src="img/choco_dulce.jpg" alt="" class="img-galeria">
+                        <div class="img-overlay">Choco Dulce</div>
+                    </div>
+                    <div class="img-container">
+                        <img src="img/chocofresas.jpeg" alt="" class="img-galeria">
+                        <div class="img-overlay">Choco Fresas</div>
+                    </div>
+                    <div class="img-container">
+                        <img src="img/choco_celeste.jpg" alt="" class="img-galeria">
+                        <div class="img-overlay">Choco Celeste</div>
+                    </div>
+                    <div class="img-container">
+                        <img src="img/choco_rosa.jpg" alt="" class="img-galeria">
+                        <div class="img-overlay">Choco Rosa</div>
+                    </div>
+                    <div class="img-container">
+                        <img src="img/choco_manjar.jpg" alt="" class="img-galeria">
+                        <div class="img-overlay">Choco Manjar</div>
+                    </div>
+                    <div class="img-container">
+                        <img src="img/choco_bit.jpg" alt="" class="img-galeria">
+                        <div class="img-overlay">Choco Bit</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="imagen-light">
+            <i class="fas fa-times close"></i>
+            <img src="" alt="imagen" class="agregar-imagen">
+        </div>
+        <script src="js/galeria.js"></script>
+    </section>
+
+   <!-- Informacion de la Empresa -->
+    <footer class="footer">
+        <img src="img/logo3000.png" alt="Logo" class="footer-logo"> <!-- Asegúrate de cambiar "logo.png" por la ruta de tu logo -->
+        <div class="footer-links">
+            <h4>Enlaces de ODS:</h4>
+            <ul>
+                <li><a href="https://www.un.org/sustainabledevelopment/es/" target="_blank">Páginas de las Naciones Unidas</a></li>
+                <li><a href="https://www.un.org/sustainabledevelopment/es/odsinaction/" target="_blank">Aplicación móvil ODS en acción</a></li>
+                <li><a href="https://www.un.org/sustainabledevelopment/es/media/" target="_blank">Zona de medios de comunicación</a></li>
+                <li><a href="https://www.un.org/sustainabledevelopment/es/spotlight-initiative/" target="_blank">Iniciativa Spotlight</a></li>
+                <li><a href="https://www.un.org/sustainabledevelopment/es/knowledge-platform/" target="_blank">Plataforma de conocimiento para el desarrollo sostenible</a></li>
+            </ul>
+        </div>
+        
+
+        <div class="footer-quotes">
+            <h4>Frases destacadas:</h4>
+            <p>El mundo necesita un sistema fiscal internacional que sea plenamente inclusivo</p>
+            <p>Los huracanes son inevitables, las catástrofes no</p>
+            <p>Resiliencia y liderazgo juvenil en medio de la guerra en Gaza</p>
+            <p>Las cifras del hambre se mantienen altas durante tres años consecutivos</p>
+        </div>
+
+        <div class="footer-icons">
+            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="icon"></a>
+            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_bird_logo_2012.svg" alt="Twitter" class="icon"></a>
+        </div>
+    </footer>
+</body>
+</html>

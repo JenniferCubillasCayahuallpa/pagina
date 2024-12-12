@@ -1,0 +1,637 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif; /* Fuente Poppins */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5; /* Color de fondo para contraste */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: -15%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white; /* Fondo blanco */
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.logo {
+    max-width: 130px;
+    height: auto; /* Cambia a auto para mantener la proporción */
+    width: 10%;
+    border-radius: 50%;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; /* Asegúrate de que el padding sea 0 */
+    display: flex;
+    gap: 15px;
+}
+
+.nav {
+    margin-left: auto;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black; /* Cambiar a negro para mejor contraste con el fondo blanco */
+    font-size: 17px;
+    font-weight: 450;
+    padding: 5px 20px; /* Padding vertical y horizontal para mejorar el tamaño del botón */
+    border: 1.2px solid rgba(0, 0, 0, 0.506); /* Línea negra */
+    border-radius: 12px; /* Esquinas redondeadas */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones para el fondo y color */
+    display: inline-block; /* Para que el padding y el borde funcionen correctamente */
+}
+
+.nav a:hover {
+    background-color: #51211c; /* Fondo marrón al pasar el mouse */
+    color: white; /* Texto blanco al pasar el mouse */
+}
+
+.hero {
+    background-image: url('../img/chocotejas.jpg'); /* Cambia la imagen aquí */
+    background-size: cover; /* Asegúrate de que la imagen cubra completamente el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat;
+    height: 120vh; /* Aumenta la altura para que sea más grande (120% de la altura de la ventana) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin-top: -20px; /* Ajusta si es necesario para centrar mejor la sección */
+    padding: 453px; /* Añade padding si es necesario para crear más espacio */
+}
+
+.hero h1 {
+    font-size: 3em;
+    font-weight: 600;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 1200px) {
+    .logo {
+        max-width: 200px; /* Reduce el tamaño del logo en pantallas medianas */
+    }
+
+    .nav ul {
+        gap: 8px; /* Reduce más el espacio entre botones en pantallas medianas */
+    }
+
+    .hero h1 {
+        font-size: 2.5em; /* Ajusta el tamaño del texto en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        max-width: 180px; /* Ajusta el tamaño del logo en pantallas pequeñas */
+    }
+
+    .nav ul {
+        flex-direction: row; /* Mantén los botones en una fila */
+        gap: 5px; /* Menos espacio entre los botones en móviles */
+    }
+    
+    .hero h1 {
+        font-size: 2em; /* Ajusta el tamaño del texto en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        max-width: 150px; /* Logo más pequeño para pantallas muy pequeñas */
+    }
+
+    .nav ul {
+        flex-direction: row;
+        gap: 3px; /* Espacio muy pequeño entre botones */
+    }
+
+    .hero h1 {
+        font-size: 1.8em; /* Ajusta el tamaño del texto en pantallas muy pequeñas */
+    }
+}
+
+
+/* New section for CHOCOLOGY */
+.section-chocology {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.chocology-title {
+    font-size: 3em;
+    font-weight: bold;
+    background-image: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 30px;
+    animation: rainbow 6s linear infinite;
+}
+
+.chocology-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.chocology-text {
+    width: 60%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    color: #333;
+}
+
+.chocology-logo {
+    width: 35%;
+    max-width: 300px;
+}
+
+.chocology-logo img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Movimiento hacia arriba */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for the rainbow effect */
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .chocology-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .chocology-text {
+        width: 100%; /* Texto ocupa todo el ancho en móviles */
+        margin-bottom: 20px;
+    }
+
+    .chocology-logo {
+        width: 100%; /* Logo ocupa todo el ancho en móviles */
+    }
+}
+
+
+
+
+/* OBJETIVOS */
+.container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: flex-start; 
+    margin: 0 auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 10px;
+    width: calc(50% - 40px); 
+    max-width: 400px; 
+    flex: 1 1 auto; 
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: moveUp 1s forwards, oscillate 2s ease-in-out infinite; 
+}
+
+
+.short-term {
+    background-color: #cc6868;
+    color: white;
+}
+
+.medium-term {
+    background-color: #ffcc80; 
+}
+
+.long-term {
+    background-color: #80d8ff; 
+    color: black;
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    font-size: 1.5em; 
+}
+
+
+ul {
+    list-style: none; 
+    padding-left: 0; 
+}
+
+ul li {
+    margin: 5px 0; 
+}
+
+
+@keyframes moveUp {
+    to {
+        opacity: 1; 
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes oscillate {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); 
+    }
+}
+
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(100% - 40px); 
+    }
+}
+
+
+/* Acordeón */
+/* Acordeón */
+.accordion {
+    width: 100%;
+    max-width: 600px; /* Ancho máximo de la acordeón */
+    margin: 20px auto; /* Centrar en la página */
+}
+
+.accordion-item {
+    border: 1px solid #ffffff; /* Borde para cada elemento */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Espacio entre elementos */
+    overflow: hidden; /* Ocultar contenido desbordante */
+}
+
+.accordion-header {
+    color: black; /* Color del texto del encabezado */
+    padding: 20px; /* Espaciado interno más grande */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el encabezado */
+    width: 100%; /* Asegurarse de que el encabezado sea del ancho completo */
+    height: 80px; /* Aumentar la altura del encabezado */
+    display: flex;
+    justify-content: space-between; /* Espacio entre el texto y la flecha */
+    align-items: center; /* Centrar el texto verticalmente */
+    font-size: 1.2em; /* Aumentar el tamaño de la fuente */
+    position: relative;
+}
+
+/* Colores de fondo para cada acordeón */
+.accordion-item:nth-child(1) .accordion-header {
+    background-color: #EDCB1A; /* Color amarillo */
+}
+
+.accordion-item:nth-child(1) .accordion-content {
+    background-color: #FFD700; /* Color dorado */
+}
+
+.accordion-item:nth-child(2) .accordion-header {
+    background-color: salmon; /* Color salmón */
+}
+
+.accordion-item:nth-child(2) .accordion-content {
+    background-color: #FFA07A; /* Color salmón claro */
+}
+
+.accordion-item:nth-child(3) .accordion-header {
+    background-color: #80F3F7; /* Color azul claro */
+}
+
+.accordion-item:nth-child(3) .accordion-content {
+    background-color: #B0E0E6; /* Color azul pálido */
+}
+
+.accordion-header:hover {
+    opacity: 0.9; /* Cambia la opacidad al pasar el mouse */
+}
+
+.accordion-content {
+    padding: 20px; /* Aumentar el espaciado interno */
+    display: none; /* Ocultar el contenido por defecto */
+    font-size: 1em; /* Tamaño de fuente normal */
+}
+
+.arrow {
+    font-size: 1.5em; /* Tamaño de la flecha */
+    transition: transform 0.3s ease; /* Animación de rotación */
+}
+
+.accordion-item.active .arrow {
+    transform: rotate(180deg); /* Rotar la flecha cuando está activo */
+}
+
+
+
+/* MISIÓN, VISIÓN Y VALORES */
+#m-v-i {
+    position: relative;
+    width: 100%;
+    height: auto; /* Cambiado a auto para ajustar según el contenido */
+    padding: 20px 0; /* Espaciado superior e inferior */
+}
+
+.m-v-i {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Lora', serif;
+}
+
+.mision {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 30px;
+    width: 270px;
+    height: 300px; /* Puedes ajustar este valor si es necesario */
+    background: #cc6868;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 2px #000000db;
+    transition: all 500ms linear;
+}
+
+.mision h4 {
+    border-bottom: 2px solid #ffffff;
+    width: 120px;
+    line-height: 30px;
+    font-size: 20px;
+}
+
+.mision p {
+    padding: 20px 0;
+    font-size: 17px;
+}
+
+.mision:nth-child(1) {
+    transform: rotate(-18deg);
+    top: 30px;
+    left: 20px;
+}
+
+.mision:nth-child(2) {
+    z-index: 1;
+    top: -5px;
+}
+
+.mision:nth-child(3) {
+    transform: rotate(18deg);
+    top: 30px;
+    left: -30px;
+}
+
+.mision:hover {
+    z-index: 2;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+
+/*==========================Sección Galería===========================*/
+#galeria {
+    width: 100%;
+    font-family: 'Lora', serif;
+    margin-top: 50px;
+}
+
+.gallery {
+    padding: 30px 0;
+}
+
+.galeria-title {
+    text-align: center; /* Centrar el título */
+    font-size: 2rem;
+    color: #0E1266; /* Color del título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+/* Contenedor principal */
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0;
+}
+
+/* Posicion de las imagenes */
+.contenedor-galeria {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+/* Estilo para las imágenes de la galería */
+.img-container {
+    position: relative;
+    width: 30%; /* Ajusta el tamaño según sea necesario */
+    margin: 10px; /* Añade margen alrededor de cada imagen */
+}
+
+.img-galeria {
+    object-fit: cover;
+    width: 100%;
+    height: 400px; /* Asegura que todas las imágenes tengan la misma altura */
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 0 14px rgba(121, 45, 45, 0.828);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.img-galeria:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para el texto con sombra */
+.img-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con transparencia */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para el texto */
+}
+
+/* Estilo para la imagen ligera (modal) */
+.imagen-light {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 100;
+}
+
+.show {
+    transform: translate(0);
+}
+
+/* Imagen en el modal */
+.agregar-imagen {
+    object-fit: cover;
+    width: 40%;
+    max-width: 500px;
+    border-radius: 10px;
+    transform: scale(0);
+    transition: transform 0.3s 0.2s;
+}
+
+.showImage {
+    transform: scale(1);
+}
+
+/* Estilo para el botón de cerrar */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+/*Footer*/
+.footer {
+    display: flex;
+    justify-content: space-between; /* Distribuir elementos */
+    align-items: center; /* Centrar verticalmente */
+    background-color: #00000076; /* Color de fondo negro */
+    color: white; /* Color del texto */
+    padding: 20px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between; /* Distribuir elementos */
+    align-items: center; /* Centrar verticalmente */
+    background-color: #00000059; /* Color de fondo negro */
+    color: white; /* Color del texto */
+    padding: 20px;
+}
+
+.footer-logo {
+    width: 150px; /* Aumenta el tamaño del logo */
+    height: auto; /* Mantener la proporción */
+}
+
+.footer-links,
+.footer-quotes,
+.footer-icons {
+    flex: 1; /* Para que cada sección tome espacio igual */
+    margin: 0 10px; /* Espaciado horizontal */
+}
+
+.footer-links h4,
+.footer-quotes h4 {
+    margin: 0 0 10px; /* Espaciado debajo del título */
+}
+
+.footer-links ul {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+.footer-links li {
+    margin: 5px 0; /* Espaciado entre elementos de la lista */
+}
+
+.footer-links a {
+    color: white; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+.footer-icons {
+    display: flex; /* Usar flex para alinear íconos */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.icon {
+    width: 25px; /* Tamaño del ícono */
+    height: 25px; /* Tamaño del ícono */
+    margin: 0 5px; /* Espaciado horizontal entre íconos */
+}

@@ -1,0 +1,183 @@
+CASO : Sitio Web de Apoyo en la Educación de Calidad
+
+DESCRIPCIÓN: 
+
+El proyecto consiste en desarrollar una página llamada "Global Education" , diseñada para contribuir con el objetivo de 
+Desarrollo Sostenible en relación a la Educación de calidad. El sitio Web tiene como objetivo proporcionar recursos , 
+herramientas y productos que ayuden a mejorar la calidad educativa en comunidades vulnerables o en desarrollo.
+La página web va a incluir :
+* Sección de Inicio
+* II de Explora
+* II de Productos
+* II de Contácto
+
+DESARROLLO:
+
+- BASE DE DATOS :
+	Realizamos una base de datos con 2 tablas : Consultas - Calendario
+
+		DISEÑO LÓGICO:
+
+	TABLAS:
+
+	- Consultas:
+
+		- indentificador
+		- nombres
+		- correo
+		- telefono
+		- mensaje
+		- fecha_hora
+
+	- Calendario:
+
+		- indentificador
+		- nombre
+		- dia
+
+	Relación :  No hay relación , ambas son tablas que trabajan de manera independiente
+
+
+		DISEÑO FÍSICO
+
+	TABLAS:
+
+	- Queries:
+
+		- identifier
+		- name
+		- email
+		- cellphone
+		- message
+		- date_hour
+
+	- Calendar:
+
+		- identifier
+		- name
+		- date
+
+
+DEVELOPMENT : 
+
+	- Conocer el caso
+	- identificar las entidades , atributos y relaciones
+	- Verificar los datos de las tablas 
+	- Diseñar nuestro modelo lógico 
+	- Crear nuestro diccionario de datos en pdf , teniendo en cuenta
+	  los estándares requeridos.
+	- Diseñar nuestro diseño físico (en inglés)
+	- Crear nuestro diccionario de Datos del diseño Físico
+	- Ingresar a nuestra base de datos y crear de manera manual o crear en vertabelo nuestro script sql
+	- Vincular nuestra base de datos a nuestro calendario y formulario de la página web
+	  con Node.js
+	- Descargar Jasperreport y crear nuestro reporte de datos
+	- Agregar todo a nuestro repositorio
+	
+Script : 
+
+-- Crear base de datos y usarla
+DROP DATABASE IF EXISTS Record;
+CREATE DATABASE Record;
+USE Record;
+
+-- Crear tabla Queries
+CREATE TABLE Queries (
+    identifier INT AUTO_INCREMENT PRIMARY KEY, 
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    cellphone CHAR(9) NOT NULL,
+    message VARCHAR(200),
+    date_hour DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Insertar datos en Queries
+INSERT INTO Queries (name, email, cellphone, message) VALUES
+('Luis', 'luis.huaraca.h@vallegrande.edu.pe', '912345123', 'Quisiera saber más sobre sus servicios'),
+('Kassandra', 'kassandra@gmai.com', '987654321', '¿Cuándo es la próxima promoción?'),
+('Alejandra', 'jennifer.cubillas.c@vallegrande.edu.pe','913441396', 'Estoy interesado en comprar un producto'),
+('María', 'amaria.sulca.h@vallegrande.edu.pe', '945678321', '¿Tienen servicio de entrega a domicilio?');
+
+INSERT INTO Queries (name, email, cellphone, message) VALUES
+('Jennifer', 'jennifer.ct8422@gmail.com', '912345687', 'Quisiera saber más sobre su empresa'),
+('Mariel', 'mariel@gmai.com', '987652231', '¿Cuales son los productos en stock?'),
+('Alejandra', 'jennifer.cubillas.c@vallegrande.edu.pe','913441396', 'Estoy interesado en comprar un producto'),
+('Sebas', 'sebas.c@vallegrande.edu.pe','913441876', 'Estoy interesado en comprar 1 paquete'),
+('Ale', 'ale.g@vallegrande.edu.pe','913441396', 'Necesito màs información'),
+('Maggie', 'maggie.c@vallegrande.edu.pe', '945128321', '¿Hacen delivery?');
+-- Crear tabla calendar
+CREATE TABLE calendar (
+    identifier INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100),
+    dia DATE,
+    UNIQUE (nombre, dia)
+);
+
+-- Insertar datos en calendar
+INSERT INTO calendar (nombre, dia) VALUES
+('Día del Periodismo', STR_TO_DATE('01/10/2024','%d/%m/%Y')),
+('Día del Combate de Angamos', STR_TO_DATE('08/10/2024','%d/%m/%Y')),
+('Descubrimiento de América', STR_TO_DATE('12/10/2024','%d/%m/%Y')),
+('Día Mundial de la Alimentación', STR_TO_DATE('16/10/2024','%d/%m/%Y')),
+('Día Internacional para la Erradicación de la Pobreza', STR_TO_DATE('17/10/2024','%d/%m/%Y')),
+('Día Nacional de Ahorro de Energía', STR_TO_DATE('21/10/2024','%d/%m/%Y')),
+('Día de la Canción Criolla', STR_TO_DATE('31/10/2024','%d/%m/%Y')),
+('Semana Nacional Forestal', STR_TO_DATE('01/11/2024','%d/%m/%Y')),
+('Semana de la Vida Animal', STR_TO_DATE('04/11/2024','%d/%m/%Y')),
+('Día de la Declaración Universal de los Derechos del Niño', STR_TO_DATE('20/11/2024','%d/%m/%Y')),
+('Navidad', STR_TO_DATE('25/12/2024','%d/%m/%Y')),
+('Día Internacional de las Defensoras de los Derechos de las Mujeres', STR_TO_DATE('29/11/2024','%d/%m/%Y')),
+('Día Mundial de la Acuicultura', STR_TO_DATE('30/11/2024','%d/%m/%Y')),
+('Día Mundial de la Lucha contra el Sida', STR_TO_DATE('01/12/2024','%d/%m/%Y')),
+('Día Internacional por la Abolición de la Esclavitud', STR_TO_DATE('02/12/2024','%d/%m/%Y')),
+('Día Internacional de las Personas con Discapacidad', STR_TO_DATE('03/12/2024','%d/%m/%Y'));
+
+-- Consultar todos los eventos
+SELECT * FROM calendar;
+
+-- Consultar todas las consultas
+SELECT * FROM Queries;
+
+-- Consultar eventos por fecha específica
+SELECT nombre, DATE_FORMAT(dia, '%d/%m/%Y') AS dia
+FROM calendar
+WHERE dia = '2024-10-16';
+
+-- Consultar eventos dentro de un rango de fechas
+SELECT nombre, DATE_FORMAT(dia, '%d/%m/%Y') AS dia
+FROM calendar
+WHERE dia BETWEEN '2024-10-01' AND '2024-10-31';
+
+-- Contar el número de eventos
+SELECT COUNT(*) AS total_eventos FROM calendar;
+
+-- Contar consultas por mes
+SELECT COUNT(*) AS total_consultas
+FROM Queries
+WHERE MONTH(date_hour) = 10 AND YEAR(date_hour) = 2024;
+
+-- Actualizar un registro en Queries
+UPDATE Queries
+SET email = 'nuevo_correo@ejemplo.com'
+WHERE identifier = 1;
+
+-- Actualizar un evento en calendar
+UPDATE calendar
+SET nombre = 'Nuevo Día Internacional'
+WHERE identifier = 3;
+
+-- Eliminar un registro en Queries
+DELETE FROM Queries
+WHERE identifier = 4;
+
+-- Eliminar un evento en calendar
+DELETE FROM calendar
+WHERE identifier = 7;
+
+-- Crear una vista para consultas frecuentes
+CREATE VIEW FrequentQueries AS
+SELECT name, email, message, date_hour
+FROM Queries
+WHERE message LIKE '%servicio%' OR message LIKE '%producto%';
+	
+	
